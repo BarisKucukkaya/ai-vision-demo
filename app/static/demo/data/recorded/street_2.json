@@ -1,0 +1,3106 @@
+{
+ "image": {
+  "name": "street_2.jpg",
+  "width": 1280,
+  "height": 743
+ },
+ "recorded_at": "2026-10-18T17:01:02",
+ "machine": "Windows-11-10.0.26300-SP0, Python 3.12.10",
+ "results": {
+  "hog_svm/opencv": {
+   "model": "HOG + linear SVM (OpenCV default people detector)",
+   "inference_ms": 83.6,
+   "device": "cpu",
+   "mock": false,
+   "score_meaning": "rescaled SVM score",
+   "settings": {
+    "nms_iou": 0.5,
+    "nms_applied": true,
+    "hog_stride": 8,
+    "hog_scale": 1.05,
+    "hit_threshold": 0.0
+   },
+   "model_info": {
+    "parameters": null,
+    "model_size_mb": null,
+    "classes_supported": 1
+   },
+   "detections": [
+    {
+     "label": "person",
+     "confidence": 0.87,
+     "box": [
+      483.8,
+      430.1,
+      574.7,
+      613.1
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.418,
+     "box": [
+      1082.9,
+      416.0,
+      1196.8,
+      643.8
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.3423,
+     "box": [
+      378.9,
+      526.1,
+      476.2,
+      719.4
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2921,
+     "box": [
+      39.7,
+      441.6,
+      157.4,
+      677.1
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1585,
+     "box": [
+      94.7,
+      419.8,
+      208.6,
+      646.4
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.0632,
+     "box": [
+      361.0,
+      398.1,
+      532.5,
+      738.6
+     ]
+    }
+   ]
+  },
+  "faster_rcnn/pytorch": {
+   "model": "Faster R-CNN ResNet50-FPN COCO (torchvision: COCO_V1)",
+   "inference_ms": 2065.6,
+   "device": "cpu",
+   "mock": false,
+   "score_meaning": "probability-like",
+   "settings": {
+    "nms_iou": 0.5,
+    "nms_applied": true
+   },
+   "model_info": {
+    "parameters": 41755286,
+    "model_size_mb": 167.0,
+    "classes_supported": 80
+   },
+   "detections": [
+    {
+     "label": "person",
+     "confidence": 0.9995,
+     "box": [
+      393.5,
+      436.5,
+      490.8,
+      698.2
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.9989,
+     "box": [
+      1104.4,
+      427.6,
+      1173.5,
+      618.6
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.9989,
+     "box": [
+      505.0,
+      451.7,
+      553.9,
+      589.2
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.9975,
+     "box": [
+      600.1,
+      482.7,
+      757.6,
+      611.3
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.9974,
+     "box": [
+      57.7,
+      446.0,
+      136.4,
+      645.1
+     ]
+    },
+    {
+     "label": "motorcycle",
+     "confidence": 0.9899,
+     "box": [
+      276.8,
+      503.8,
+      397.0,
+      644.8
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.9852,
+     "box": [
+      124.9,
+      459.5,
+      165.5,
+      606.0
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.9852,
+     "box": [
+      202.8,
+      467.9,
+      244.4,
+      593.1
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.9839,
+     "box": [
+      715.6,
+      463.4,
+      738.5,
+      486.0
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.9791,
+     "box": [
+      675.1,
+      450.8,
+      717.5,
+      488.3
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.978,
+     "box": [
+      1155.0,
+      512.9,
+      1182.0,
+      607.1
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.9658,
+     "box": [
+      526.7,
+      475.6,
+      639.9,
+      570.6
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.957,
+     "box": [
+      612.3,
+      454.6,
+      640.7,
+      498.7
+     ]
+    },
+    {
+     "label": "umbrella",
+     "confidence": 0.9305,
+     "box": [
+      203.9,
+      393.8,
+      297.2,
+      446.2
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.8995,
+     "box": [
+      998.0,
+      468.3,
+      1074.3,
+      559.4
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.8985,
+     "box": [
+      1044.5,
+      452.4,
+      1057.4,
+      471.8
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.8949,
+     "box": [
+      472.1,
+      465.2,
+      504.3,
+      583.5
+     ]
+    },
+    {
+     "label": "umbrella",
+     "confidence": 0.893,
+     "box": [
+      1173.7,
+      407.6,
+      1225.0,
+      447.8
+     ]
+    },
+    {
+     "label": "umbrella",
+     "confidence": 0.8903,
+     "box": [
+      995.9,
+      413.9,
+      1070.9,
+      447.4
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.8678,
+     "box": [
+      699.5,
+      441.1,
+      1022.3,
+      677.6
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.8543,
+     "box": [
+      547.8,
+      454.6,
+      573.7,
+      487.4
+     ]
+    },
+    {
+     "label": "umbrella",
+     "confidence": 0.8499,
+     "box": [
+      254.3,
+      384.0,
+      447.7,
+      452.5
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.6877,
+     "box": [
+      596.9,
+      461.7,
+      615.2,
+      479.5
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.6797,
+     "box": [
+      572.5,
+      459.3,
+      587.8,
+      479.0
+     ]
+    },
+    {
+     "label": "suitcase",
+     "confidence": 0.6587,
+     "box": [
+      1086.1,
+      534.4,
+      1126.6,
+      588.5
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.6552,
+     "box": [
+      482.2,
+      492.0,
+      507.6,
+      579.8
+     ]
+    },
+    {
+     "label": "handbag",
+     "confidence": 0.6511,
+     "box": [
+      114.8,
+      494.7,
+      140.8,
+      544.8
+     ]
+    },
+    {
+     "label": "handbag",
+     "confidence": 0.651,
+     "box": [
+      1084.8,
+      527.3,
+      1126.5,
+      588.4
+     ]
+    },
+    {
+     "label": "handbag",
+     "confidence": 0.6484,
+     "box": [
+      68.1,
+      498.2,
+      107.5,
+      544.2
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.6454,
+     "box": [
+      702.4,
+      434.4,
+      1014.5,
+      680.1
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.5689,
+     "box": [
+      104.5,
+      463.2,
+      140.5,
+      617.0
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.5473,
+     "box": [
+      1202.3,
+      424.1,
+      1226.4,
+      492.8
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.5249,
+     "box": [
+      472.2,
+      462.6,
+      497.7,
+      518.5
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.5247,
+     "box": [
+      1177.9,
+      438.0,
+      1206.4,
+      491.7
+     ]
+    },
+    {
+     "label": "motorcycle",
+     "confidence": 0.473,
+     "box": [
+      275.4,
+      511.9,
+      346.2,
+      633.1
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.4394,
+     "box": [
+      458.3,
+      455.6,
+      473.2,
+      477.1
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.431,
+     "box": [
+      735.2,
+      455.4,
+      783.8,
+      518.8
+     ]
+    },
+    {
+     "label": "umbrella",
+     "confidence": 0.4086,
+     "box": [
+      424.1,
+      406.8,
+      462.6,
+      424.7
+     ]
+    },
+    {
+     "label": "umbrella",
+     "confidence": 0.3639,
+     "box": [
+      213.3,
+      393.5,
+      352.1,
+      456.2
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.3566,
+     "box": [
+      886.8,
+      470.8,
+      921.4,
+      497.1
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.3509,
+     "box": [
+      786.0,
+      467.3,
+      811.2,
+      504.0
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.3433,
+     "box": [
+      107.5,
+      458.1,
+      131.8,
+      483.0
+     ]
+    },
+    {
+     "label": "backpack",
+     "confidence": 0.3238,
+     "box": [
+      110.0,
+      492.1,
+      142.3,
+      546.6
+     ]
+    },
+    {
+     "label": "bench",
+     "confidence": 0.3134,
+     "box": [
+      181.1,
+      586.3,
+      226.0,
+      617.8
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2969,
+     "box": [
+      1203.2,
+      425.7,
+      1231.9,
+      538.2
+     ]
+    },
+    {
+     "label": "suitcase",
+     "confidence": 0.2801,
+     "box": [
+      121.3,
+      540.6,
+      158.5,
+      603.8
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2617,
+     "box": [
+      624.5,
+      464.3,
+      641.5,
+      500.8
+     ]
+    },
+    {
+     "label": "backpack",
+     "confidence": 0.2466,
+     "box": [
+      65.7,
+      495.2,
+      117.0,
+      546.2
+     ]
+    },
+    {
+     "label": "handbag",
+     "confidence": 0.242,
+     "box": [
+      117.0,
+      543.0,
+      137.2,
+      578.0
+     ]
+    },
+    {
+     "label": "umbrella",
+     "confidence": 0.242,
+     "box": [
+      1171.5,
+      404.8,
+      1225.4,
+      484.3
+     ]
+    },
+    {
+     "label": "backpack",
+     "confidence": 0.229,
+     "box": [
+      1084.1,
+      530.5,
+      1125.1,
+      588.7
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2278,
+     "box": [
+      231.4,
+      479.5,
+      245.6,
+      512.8
+     ]
+    },
+    {
+     "label": "umbrella",
+     "confidence": 0.2179,
+     "box": [
+      261.9,
+      391.5,
+      443.2,
+      503.2
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2123,
+     "box": [
+      1174.2,
+      426.6,
+      1210.1,
+      532.3
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.2114,
+     "box": [
+      997.6,
+      468.2,
+      1075.5,
+      569.4
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2008,
+     "box": [
+      849.0,
+      464.9,
+      886.9,
+      499.3
+     ]
+    },
+    {
+     "label": "umbrella",
+     "confidence": 0.1867,
+     "box": [
+      285.1,
+      447.1,
+      311.7,
+      461.2
+     ]
+    },
+    {
+     "label": "handbag",
+     "confidence": 0.1818,
+     "box": [
+      80.8,
+      486.2,
+      132.4,
+      547.8
+     ]
+    },
+    {
+     "label": "umbrella",
+     "confidence": 0.18,
+     "box": [
+      205.5,
+      395.1,
+      303.8,
+      503.7
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1735,
+     "box": [
+      1177.7,
+      418.9,
+      1218.6,
+      495.0
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1609,
+     "box": [
+      568.5,
+      455.6,
+      582.6,
+      479.7
+     ]
+    },
+    {
+     "label": "sports ball",
+     "confidence": 0.1519,
+     "box": [
+      111.6,
+      464.3,
+      129.8,
+      477.8
+     ]
+    },
+    {
+     "label": "skateboard",
+     "confidence": 0.1405,
+     "box": [
+      180.7,
+      586.5,
+      227.8,
+      617.4
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1388,
+     "box": [
+      1190.2,
+      421.1,
+      1227.1,
+      516.6
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1316,
+     "box": [
+      233.3,
+      477.3,
+      279.9,
+      611.9
+     ]
+    },
+    {
+     "label": "backpack",
+     "confidence": 0.1303,
+     "box": [
+      416.2,
+      469.0,
+      477.2,
+      558.3
+     ]
+    },
+    {
+     "label": "suitcase",
+     "confidence": 0.1302,
+     "box": [
+      182.3,
+      586.7,
+      223.6,
+      615.2
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1285,
+     "box": [
+      602.0,
+      456.9,
+      629.8,
+      489.9
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1242,
+     "box": [
+      1176.2,
+      419.7,
+      1224.4,
+      580.7
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1214,
+     "box": [
+      554.6,
+      454.0,
+      581.7,
+      481.3
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.1166,
+     "box": [
+      478.9,
+      475.0,
+      514.0,
+      548.3
+     ]
+    },
+    {
+     "label": "handbag",
+     "confidence": 0.1105,
+     "box": [
+      112.8,
+      485.3,
+      142.4,
+      575.3
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.103,
+     "box": [
+      294.3,
+      480.0,
+      320.8,
+      509.2
+     ]
+    },
+    {
+     "label": "umbrella",
+     "confidence": 0.1029,
+     "box": [
+      291.4,
+      444.2,
+      407.1,
+      488.7
+     ]
+    },
+    {
+     "label": "chair",
+     "confidence": 0.1016,
+     "box": [
+      246.4,
+      463.0,
+      282.1,
+      505.8
+     ]
+    },
+    {
+     "label": "potted plant",
+     "confidence": 0.1004,
+     "box": [
+      1169.4,
+      454.6,
+      1214.2,
+      574.0
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1003,
+     "box": [
+      877.2,
+      470.4,
+      902.1,
+      497.4
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.098,
+     "box": [
+      436.7,
+      472.5,
+      715.8,
+      575.1
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.0939,
+     "box": [
+      244.1,
+      472.5,
+      258.8,
+      508.5
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.0895,
+     "box": [
+      495.0,
+      460.8,
+      520.4,
+      566.0
+     ]
+    },
+    {
+     "label": "orange",
+     "confidence": 0.086,
+     "box": [
+      109.5,
+      463.5,
+      130.4,
+      479.2
+     ]
+    },
+    {
+     "label": "umbrella",
+     "confidence": 0.0847,
+     "box": [
+      965.0,
+      393.5,
+      1064.3,
+      429.1
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.0831,
+     "box": [
+      614.1,
+      455.7,
+      630.8,
+      486.0
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.083,
+     "box": [
+      472.3,
+      551.9,
+      485.0,
+      579.0
+     ]
+    },
+    {
+     "label": "donut",
+     "confidence": 0.0819,
+     "box": [
+      111.2,
+      463.1,
+      129.4,
+      478.4
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.0789,
+     "box": [
+      600.6,
+      461.0,
+      621.9,
+      484.1
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.0739,
+     "box": [
+      218.4,
+      472.5,
+      253.7,
+      595.6
+     ]
+    },
+    {
+     "label": "umbrella",
+     "confidence": 0.0677,
+     "box": [
+      346.8,
+      453.0,
+      396.1,
+      488.5
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.0617,
+     "box": [
+      500.2,
+      462.1,
+      510.0,
+      473.8
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.0604,
+     "box": [
+      239.4,
+      477.5,
+      252.6,
+      511.3
+     ]
+    },
+    {
+     "label": "skateboard",
+     "confidence": 0.0598,
+     "box": [
+      195.7,
+      520.3,
+      206.4,
+      587.9
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.0593,
+     "box": [
+      606.3,
+      458.0,
+      620.0,
+      480.1
+     ]
+    },
+    {
+     "label": "backpack",
+     "confidence": 0.0521,
+     "box": [
+      481.4,
+      491.6,
+      503.0,
+      533.7
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.0518,
+     "box": [
+      1156.8,
+      452.6,
+      1202.1,
+      608.2
+     ]
+    },
+    {
+     "label": "umbrella",
+     "confidence": 0.0506,
+     "box": [
+      240.4,
+      403.2,
+      329.0,
+      526.1
+     ]
+    },
+    {
+     "label": "handbag",
+     "confidence": 0.0504,
+     "box": [
+      471.6,
+      551.3,
+      484.0,
+      575.3
+     ]
+    }
+   ]
+  },
+  "retinanet/pytorch": {
+   "model": "RetinaNet ResNet50-FPN COCO (torchvision: COCO_V1)",
+   "inference_ms": 2097.0,
+   "device": "cpu",
+   "mock": false,
+   "score_meaning": "probability-like",
+   "settings": {
+    "nms_iou": 0.5,
+    "nms_applied": true
+   },
+   "model_info": {
+    "parameters": 34014999,
+    "model_size_mb": 136.1,
+    "classes_supported": 80
+   },
+   "detections": [
+    {
+     "label": "person",
+     "confidence": 0.9222,
+     "box": [
+      56.5,
+      448.9,
+      140.9,
+      646.8
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.9177,
+     "box": [
+      1101.4,
+      429.8,
+      1176.2,
+      617.8
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.8985,
+     "box": [
+      396.3,
+      433.8,
+      486.7,
+      697.6
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.827,
+     "box": [
+      601.6,
+      484.2,
+      748.4,
+      607.9
+     ]
+    },
+    {
+     "label": "motorcycle",
+     "confidence": 0.7961,
+     "box": [
+      275.1,
+      495.9,
+      399.5,
+      644.2
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.7847,
+     "box": [
+      504.1,
+      449.5,
+      550.1,
+      592.6
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.7277,
+     "box": [
+      674.3,
+      449.9,
+      717.0,
+      487.6
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.698,
+     "box": [
+      202.9,
+      469.6,
+      243.7,
+      592.1
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.6759,
+     "box": [
+      1154.2,
+      520.4,
+      1179.6,
+      606.6
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.6715,
+     "box": [
+      541.3,
+      478.8,
+      639.0,
+      571.1
+     ]
+    },
+    {
+     "label": "umbrella",
+     "confidence": 0.6416,
+     "box": [
+      995.6,
+      415.3,
+      1072.0,
+      447.6
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.628,
+     "box": [
+      715.3,
+      463.5,
+      740.4,
+      487.5
+     ]
+    },
+    {
+     "label": "handbag",
+     "confidence": 0.5899,
+     "box": [
+      1086.4,
+      526.6,
+      1128.8,
+      590.0
+     ]
+    },
+    {
+     "label": "umbrella",
+     "confidence": 0.5693,
+     "box": [
+      202.1,
+      395.0,
+      298.2,
+      445.1
+     ]
+    },
+    {
+     "label": "umbrella",
+     "confidence": 0.5659,
+     "box": [
+      271.1,
+      383.3,
+      436.6,
+      449.9
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.5607,
+     "box": [
+      701.8,
+      436.3,
+      1022.9,
+      675.5
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.5503,
+     "box": [
+      120.3,
+      456.7,
+      163.8,
+      607.7
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.528,
+     "box": [
+      547.2,
+      453.4,
+      575.0,
+      480.3
+     ]
+    },
+    {
+     "label": "handbag",
+     "confidence": 0.5036,
+     "box": [
+      114.4,
+      493.8,
+      140.6,
+      545.4
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.5013,
+     "box": [
+      704.4,
+      438.6,
+      1023.2,
+      678.6
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.4983,
+     "box": [
+      620.7,
+      458.3,
+      640.8,
+      503.1
+     ]
+    },
+    {
+     "label": "backpack",
+     "confidence": 0.4721,
+     "box": [
+      114.5,
+      494.9,
+      140.7,
+      545.5
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.4388,
+     "box": [
+      614.5,
+      455.0,
+      635.3,
+      495.5
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.4377,
+     "box": [
+      996.5,
+      462.5,
+      1074.5,
+      561.9
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.3735,
+     "box": [
+      464.6,
+      461.0,
+      499.9,
+      589.5
+     ]
+    },
+    {
+     "label": "umbrella",
+     "confidence": 0.3702,
+     "box": [
+      1173.9,
+      406.5,
+      1226.1,
+      440.6
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.3471,
+     "box": [
+      127.5,
+      454.7,
+      165.5,
+      516.4
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.3399,
+     "box": [
+      599.0,
+      461.6,
+      614.4,
+      477.9
+     ]
+    },
+    {
+     "label": "backpack",
+     "confidence": 0.3317,
+     "box": [
+      1086.9,
+      526.5,
+      1128.4,
+      590.0
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.3316,
+     "box": [
+      481.5,
+      496.1,
+      505.9,
+      582.9
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.3251,
+     "box": [
+      107.4,
+      460.8,
+      133.6,
+      483.2
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.3242,
+     "box": [
+      849.4,
+      461.4,
+      889.0,
+      498.6
+     ]
+    },
+    {
+     "label": "motorcycle",
+     "confidence": 0.3184,
+     "box": [
+      289.9,
+      526.6,
+      348.4,
+      647.7
+     ]
+    },
+    {
+     "label": "suitcase",
+     "confidence": 0.3176,
+     "box": [
+      183.0,
+      586.8,
+      226.4,
+      617.5
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.3172,
+     "box": [
+      998.3,
+      469.2,
+      1074.4,
+      562.8
+     ]
+    },
+    {
+     "label": "umbrella",
+     "confidence": 0.3071,
+     "box": [
+      419.8,
+      407.4,
+      462.9,
+      425.0
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2971,
+     "box": [
+      107.2,
+      486.4,
+      139.6,
+      551.5
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.2952,
+     "box": [
+      492.7,
+      476.7,
+      613.0,
+      576.9
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2938,
+     "box": [
+      885.2,
+      472.3,
+      921.7,
+      497.6
+     ]
+    },
+    {
+     "label": "umbrella",
+     "confidence": 0.289,
+     "box": [
+      994.4,
+      419.9,
+      1066.8,
+      468.8
+     ]
+    },
+    {
+     "label": "umbrella",
+     "confidence": 0.2858,
+     "box": [
+      728.6,
+      277.0,
+      1094.0,
+      441.8
+     ]
+    },
+    {
+     "label": "suitcase",
+     "confidence": 0.2802,
+     "box": [
+      1085.7,
+      528.6,
+      1128.0,
+      587.7
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2742,
+     "box": [
+      109.8,
+      476.6,
+      146.9,
+      590.6
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2668,
+     "box": [
+      125.2,
+      468.3,
+      165.1,
+      550.3
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.266,
+     "box": [
+      459.9,
+      448.9,
+      473.5,
+      473.6
+     ]
+    },
+    {
+     "label": "handbag",
+     "confidence": 0.2646,
+     "box": [
+      117.3,
+      472.1,
+      157.3,
+      575.0
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2646,
+     "box": [
+      560.6,
+      456.7,
+      583.9,
+      479.2
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2591,
+     "box": [
+      575.4,
+      459.3,
+      587.2,
+      478.1
+     ]
+    },
+    {
+     "label": "backpack",
+     "confidence": 0.2566,
+     "box": [
+      117.3,
+      472.1,
+      157.3,
+      575.0
+     ]
+    },
+    {
+     "label": "skateboard",
+     "confidence": 0.2558,
+     "box": [
+      182.8,
+      587.0,
+      225.6,
+      617.6
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.255,
+     "box": [
+      786.9,
+      464.8,
+      813.8,
+      500.4
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2535,
+     "box": [
+      292.3,
+      478.0,
+      318.8,
+      508.9
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2535,
+     "box": [
+      94.4,
+      457.5,
+      155.3,
+      628.1
+     ]
+    },
+    {
+     "label": "umbrella",
+     "confidence": 0.2533,
+     "box": [
+      212.8,
+      385.6,
+      388.9,
+      446.1
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2519,
+     "box": [
+      469.8,
+      463.8,
+      499.9,
+      537.6
+     ]
+    },
+    {
+     "label": "handbag",
+     "confidence": 0.2519,
+     "box": [
+      121.6,
+      543.7,
+      139.7,
+      574.6
+     ]
+    },
+    {
+     "label": "handbag",
+     "confidence": 0.2505,
+     "box": [
+      67.6,
+      502.6,
+      104.0,
+      543.1
+     ]
+    },
+    {
+     "label": "umbrella",
+     "confidence": 0.2493,
+     "box": [
+      286.8,
+      446.5,
+      311.3,
+      460.6
+     ]
+    },
+    {
+     "label": "chair",
+     "confidence": 0.2492,
+     "box": [
+      1242.7,
+      266.1,
+      1280.0,
+      365.3
+     ]
+    },
+    {
+     "label": "motorcycle",
+     "confidence": 0.2445,
+     "box": [
+      342.1,
+      520.2,
+      400.7,
+      629.2
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.244,
+     "box": [
+      473.0,
+      463.5,
+      496.8,
+      504.3
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.243,
+     "box": [
+      585.4,
+      461.1,
+      600.1,
+      478.7
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2396,
+     "box": [
+      1044.3,
+      454.0,
+      1057.5,
+      470.8
+     ]
+    },
+    {
+     "label": "suitcase",
+     "confidence": 0.2379,
+     "box": [
+      1053.0,
+      267.9,
+      1237.5,
+      376.7
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2356,
+     "box": [
+      214.0,
+      445.1,
+      277.9,
+      600.9
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.234,
+     "box": [
+      1023.2,
+      450.0,
+      1050.8,
+      470.7
+     ]
+    },
+    {
+     "label": "backpack",
+     "confidence": 0.2332,
+     "box": [
+      103.3,
+      484.2,
+      144.4,
+      548.8
+     ]
+    },
+    {
+     "label": "motorcycle",
+     "confidence": 0.231,
+     "box": [
+      270.5,
+      506.4,
+      339.0,
+      631.0
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2286,
+     "box": [
+      243.3,
+      473.4,
+      261.3,
+      510.7
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.227,
+     "box": [
+      485.5,
+      500.5,
+      508.9,
+      573.2
+     ]
+    },
+    {
+     "label": "umbrella",
+     "confidence": 0.227,
+     "box": [
+      261.3,
+      384.8,
+      441.4,
+      504.3
+     ]
+    },
+    {
+     "label": "suitcase",
+     "confidence": 0.2256,
+     "box": [
+      122.4,
+      542.0,
+      155.1,
+      606.0
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2203,
+     "box": [
+      1035.3,
+      452.2,
+      1055.3,
+      470.5
+     ]
+    },
+    {
+     "label": "potted plant",
+     "confidence": 0.2202,
+     "box": [
+      1170.5,
+      433.7,
+      1231.2,
+      574.7
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2132,
+     "box": [
+      877.3,
+      470.4,
+      907.2,
+      497.8
+     ]
+    },
+    {
+     "label": "handbag",
+     "confidence": 0.2101,
+     "box": [
+      121.1,
+      542.7,
+      143.3,
+      598.8
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2072,
+     "box": [
+      110.1,
+      457.7,
+      154.2,
+      506.0
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2059,
+     "box": [
+      453.0,
+      443.6,
+      470.5,
+      470.3
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2051,
+     "box": [
+      602.3,
+      460.5,
+      619.7,
+      481.1
+     ]
+    },
+    {
+     "label": "chair",
+     "confidence": 0.2033,
+     "box": [
+      1086.5,
+      525.9,
+      1128.4,
+      589.9
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2017,
+     "box": [
+      491.4,
+      511.7,
+      508.7,
+      571.9
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2003,
+     "box": [
+      301.9,
+      480.1,
+      324.3,
+      508.4
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1999,
+     "box": [
+      107.0,
+      461.9,
+      137.2,
+      498.0
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1975,
+     "box": [
+      109.6,
+      463.6,
+      147.3,
+      536.7
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1973,
+     "box": [
+      526.4,
+      449.6,
+      545.7,
+      477.2
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.1933,
+     "box": [
+      469.3,
+      463.7,
+      503.6,
+      578.9
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1932,
+     "box": [
+      229.2,
+      475.0,
+      246.8,
+      512.7
+     ]
+    },
+    {
+     "label": "handbag",
+     "confidence": 0.1911,
+     "box": [
+      1089.6,
+      524.8,
+      1122.1,
+      566.3
+     ]
+    },
+    {
+     "label": "umbrella",
+     "confidence": 0.1907,
+     "box": [
+      1053.6,
+      268.5,
+      1246.1,
+      600.2
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1894,
+     "box": [
+      925.4,
+      457.1,
+      973.5,
+      498.3
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.189,
+     "box": [
+      602.5,
+      458.2,
+      632.4,
+      493.2
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1889,
+     "box": [
+      497.9,
+      462.1,
+      513.1,
+      487.7
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.1888,
+     "box": [
+      557.5,
+      482.1,
+      701.0,
+      600.2
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1864,
+     "box": [
+      273.4,
+      492.1,
+      383.4,
+      642.6
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1855,
+     "box": [
+      466.8,
+      461.0,
+      482.9,
+      477.5
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.1844,
+     "box": [
+      481.2,
+      493.1,
+      504.8,
+      550.4
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1842,
+     "box": [
+      397.8,
+      444.9,
+      425.9,
+      486.5
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1832,
+     "box": [
+      1124.9,
+      480.8,
+      1177.4,
+      614.2
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1824,
+     "box": [
+      117.4,
+      481.6,
+      154.1,
+      545.4
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1818,
+     "box": [
+      472.6,
+      461.3,
+      489.9,
+      479.3
+     ]
+    }
+   ]
+  },
+  "retinanet/tensorflow": {
+   "model": "RetinaNet ResNet50-FPN COCO (KerasHub: retinanet_resnet50_fpn_coco)",
+   "inference_ms": 1179.2,
+   "device": "cpu",
+   "mock": false,
+   "score_meaning": "probability-like",
+   "settings": {
+    "nms_iou": 0.5,
+    "nms_applied": true
+   },
+   "model_info": {
+    "parameters": 34121239,
+    "model_size_mb": 136.5,
+    "classes_supported": 80
+   },
+   "detections": [
+    {
+     "label": "car",
+     "confidence": 0.8807,
+     "box": [
+      597.4,
+      478.4,
+      755.3,
+      607.0
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.8652,
+     "box": [
+      55.9,
+      444.1,
+      128.3,
+      648.5
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.8464,
+     "box": [
+      1103.2,
+      424.1,
+      1173.4,
+      614.9
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.8373,
+     "box": [
+      393.2,
+      428.7,
+      490.4,
+      694.0
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.7959,
+     "box": [
+      505.3,
+      449.5,
+      555.2,
+      590.2
+     ]
+    },
+    {
+     "label": "motorcycle",
+     "confidence": 0.7744,
+     "box": [
+      273.3,
+      508.3,
+      400.5,
+      646.7
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.6421,
+     "box": [
+      543.2,
+      482.1,
+      644.1,
+      568.5
+     ]
+    },
+    {
+     "label": "umbrella",
+     "confidence": 0.6088,
+     "box": [
+      280.6,
+      381.7,
+      446.0,
+      448.0
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.6047,
+     "box": [
+      700.1,
+      435.1,
+      1028.6,
+      679.2
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.6034,
+     "box": [
+      124.3,
+      452.7,
+      166.2,
+      608.2
+     ]
+    },
+    {
+     "label": "handbag",
+     "confidence": 0.5519,
+     "box": [
+      1086.6,
+      524.3,
+      1129.1,
+      589.1
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.5328,
+     "box": [
+      200.3,
+      477.9,
+      238.9,
+      592.0
+     ]
+    },
+    {
+     "label": "umbrella",
+     "confidence": 0.4899,
+     "box": [
+      200.1,
+      391.9,
+      301.1,
+      444.1
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.4474,
+     "box": [
+      674.1,
+      453.6,
+      716.7,
+      488.5
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.4259,
+     "box": [
+      616.5,
+      459.7,
+      640.5,
+      499.4
+     ]
+    },
+    {
+     "label": "umbrella",
+     "confidence": 0.4088,
+     "box": [
+      995.1,
+      415.1,
+      1072.7,
+      443.6
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.3889,
+     "box": [
+      1201.9,
+      419.7,
+      1237.7,
+      579.8
+     ]
+    },
+    {
+     "label": "handbag",
+     "confidence": 0.3865,
+     "box": [
+      112.6,
+      487.5,
+      142.2,
+      562.1
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.3801,
+     "box": [
+      94.8,
+      446.1,
+      156.5,
+      630.4
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.3439,
+     "box": [
+      475.4,
+      471.1,
+      647.1,
+      576.0
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.3356,
+     "box": [
+      693.9,
+      459.8,
+      725.6,
+      486.6
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.3324,
+     "box": [
+      1180.1,
+      414.9,
+      1226.4,
+      577.1
+     ]
+    },
+    {
+     "label": "umbrella",
+     "confidence": 0.3194,
+     "box": [
+      1173.6,
+      407.8,
+      1232.3,
+      435.9
+     ]
+    },
+    {
+     "label": "handbag",
+     "confidence": 0.3043,
+     "box": [
+      64.7,
+      498.7,
+      109.4,
+      550.8
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2982,
+     "box": [
+      219.3,
+      483.6,
+      272.4,
+      597.8
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2968,
+     "box": [
+      471.0,
+      463.6,
+      504.9,
+      579.8
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2964,
+     "box": [
+      551.8,
+      455.9,
+      574.0,
+      478.7
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2961,
+     "box": [
+      1152.9,
+      525.4,
+      1181.0,
+      610.2
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2918,
+     "box": [
+      1124.5,
+      486.5,
+      1176.4,
+      611.6
+     ]
+    },
+    {
+     "label": "handbag",
+     "confidence": 0.2905,
+     "box": [
+      1114.3,
+      445.2,
+      1163.7,
+      548.9
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2897,
+     "box": [
+      605.7,
+      459.8,
+      627.6,
+      493.0
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2857,
+     "box": [
+      879.0,
+      466.1,
+      919.6,
+      498.1
+     ]
+    },
+    {
+     "label": "umbrella",
+     "confidence": 0.2825,
+     "box": [
+      204.7,
+      383.0,
+      378.2,
+      454.7
+     ]
+    },
+    {
+     "label": "handbag",
+     "confidence": 0.2762,
+     "box": [
+      120.8,
+      491.6,
+      159.7,
+      548.1
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2702,
+     "box": [
+      611.3,
+      460.4,
+      635.5,
+      489.0
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.2649,
+     "box": [
+      999.6,
+      468.8,
+      1073.6,
+      563.8
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2643,
+     "box": [
+      540.8,
+      452.1,
+      568.3,
+      478.8
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2619,
+     "box": [
+      685.0,
+      447.4,
+      715.3,
+      480.7
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2597,
+     "box": [
+      581.7,
+      457.2,
+      598.1,
+      476.7
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2594,
+     "box": [
+      598.6,
+      455.8,
+      615.6,
+      480.2
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2591,
+     "box": [
+      713.4,
+      462.2,
+      737.2,
+      485.6
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2506,
+     "box": [
+      483.3,
+      480.0,
+      509.0,
+      576.9
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.2396,
+     "box": [
+      565.5,
+      475.5,
+      623.3,
+      500.3
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2384,
+     "box": [
+      720.2,
+      465.9,
+      741.6,
+      491.0
+     ]
+    },
+    {
+     "label": "umbrella",
+     "confidence": 0.2374,
+     "box": [
+      218.1,
+      384.4,
+      446.7,
+      507.9
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2367,
+     "box": [
+      244.3,
+      471.6,
+      261.0,
+      501.2
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2327,
+     "box": [
+      859.6,
+      468.8,
+      888.9,
+      497.9
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2294,
+     "box": [
+      606.0,
+      448.4,
+      622.3,
+      475.4
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2291,
+     "box": [
+      566.8,
+      453.4,
+      581.7,
+      476.3
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2256,
+     "box": [
+      235.0,
+      473.1,
+      255.0,
+      505.8
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2232,
+     "box": [
+      284.7,
+      472.1,
+      317.4,
+      503.9
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2213,
+     "box": [
+      848.1,
+      470.3,
+      874.7,
+      498.2
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2179,
+     "box": [
+      254.2,
+      471.4,
+      274.8,
+      502.5
+     ]
+    },
+    {
+     "label": "handbag",
+     "confidence": 0.2164,
+     "box": [
+      133.5,
+      465.4,
+      166.9,
+      565.8
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2136,
+     "box": [
+      518.4,
+      449.5,
+      553.3,
+      482.0
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2133,
+     "box": [
+      866.9,
+      465.9,
+      904.7,
+      498.9
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2126,
+     "box": [
+      667.8,
+      457.9,
+      698.3,
+      490.2
+     ]
+    },
+    {
+     "label": "handbag",
+     "confidence": 0.2119,
+     "box": [
+      1110.5,
+      455.6,
+      1152.4,
+      524.0
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2116,
+     "box": [
+      1135.3,
+      418.5,
+      1201.8,
+      611.9
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2115,
+     "box": [
+      600.6,
+      471.2,
+      638.9,
+      501.4
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2102,
+     "box": [
+      913.4,
+      457.1,
+      952.6,
+      494.9
+     ]
+    },
+    {
+     "label": "handbag",
+     "confidence": 0.2089,
+     "box": [
+      76.4,
+      486.0,
+      119.7,
+      546.7
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2078,
+     "box": [
+      576.9,
+      461.3,
+      604.8,
+      482.4
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.2074,
+     "box": [
+      547.6,
+      478.4,
+      637.9,
+      528.6
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2061,
+     "box": [
+      283.8,
+      474.4,
+      332.2,
+      514.8
+     ]
+    },
+    {
+     "label": "handbag",
+     "confidence": 0.206,
+     "box": [
+      116.8,
+      521.4,
+      141.6,
+      599.0
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2052,
+     "box": [
+      833.1,
+      472.1,
+      855.4,
+      498.4
+     ]
+    },
+    {
+     "label": "handbag",
+     "confidence": 0.2032,
+     "box": [
+      124.2,
+      521.5,
+      155.4,
+      602.0
+     ]
+    },
+    {
+     "label": "handbag",
+     "confidence": 0.2024,
+     "box": [
+      1099.9,
+      489.0,
+      1127.0,
+      553.8
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.2011,
+     "box": [
+      659.6,
+      452.3,
+      676.1,
+      483.0
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1997,
+     "box": [
+      269.0,
+      471.4,
+      292.7,
+      502.6
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1986,
+     "box": [
+      557.1,
+      461.9,
+      582.8,
+      480.8
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1981,
+     "box": [
+      125.0,
+      451.4,
+      165.9,
+      505.7
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.1978,
+     "box": [
+      546.8,
+      468.7,
+      685.9,
+      588.8
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1964,
+     "box": [
+      472.8,
+      466.8,
+      498.9,
+      523.3
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1961,
+     "box": [
+      616.3,
+      451.2,
+      634.2,
+      481.8
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1954,
+     "box": [
+      531.4,
+      459.0,
+      569.9,
+      487.9
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1947,
+     "box": [
+      459.7,
+      458.9,
+      494.6,
+      581.7
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1937,
+     "box": [
+      909.3,
+      458.0,
+      933.7,
+      493.6
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1926,
+     "box": [
+      507.6,
+      449.8,
+      534.2,
+      479.4
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1919,
+     "box": [
+      110.5,
+      458.5,
+      144.9,
+      531.5
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1884,
+     "box": [
+      462.9,
+      461.6,
+      490.1,
+      524.9
+     ]
+    },
+    {
+     "label": "handbag",
+     "confidence": 0.1869,
+     "box": [
+      1089.0,
+      472.2,
+      1138.5,
+      586.3
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1852,
+     "box": [
+      495.0,
+      450.7,
+      512.9,
+      476.5
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1836,
+     "box": [
+      608.2,
+      456.2,
+      626.1,
+      478.4
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1787,
+     "box": [
+      631.2,
+      458.7,
+      654.1,
+      491.7
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1781,
+     "box": [
+      1207.2,
+      432.8,
+      1233.7,
+      540.7
+     ]
+    },
+    {
+     "label": "handbag",
+     "confidence": 0.1775,
+     "box": [
+      1121.3,
+      457.8,
+      1164.9,
+      514.7
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1743,
+     "box": [
+      704.4,
+      454.2,
+      723.6,
+      481.0
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1741,
+     "box": [
+      484.5,
+      469.3,
+      509.1,
+      528.8
+     ]
+    },
+    {
+     "label": "motorcycle",
+     "confidence": 0.1731,
+     "box": [
+      318.9,
+      538.3,
+      392.3,
+      631.0
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.1724,
+     "box": [
+      548.9,
+      460.9,
+      573.7,
+      490.0
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1717,
+     "box": [
+      230.1,
+      485.9,
+      258.9,
+      535.4
+     ]
+    },
+    {
+     "label": "umbrella",
+     "confidence": 0.17,
+     "box": [
+      218.7,
+      445.9,
+      249.0,
+      469.7
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1694,
+     "box": [
+      110.3,
+      450.1,
+      150.0,
+      501.2
+     ]
+    },
+    {
+     "label": "handbag",
+     "confidence": 0.1693,
+     "box": [
+      118.0,
+      507.7,
+      162.2,
+      583.4
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1691,
+     "box": [
+      156.7,
+      456.8,
+      204.1,
+      603.8
+     ]
+    },
+    {
+     "label": "handbag",
+     "confidence": 0.1686,
+     "box": [
+      1089.9,
+      516.6,
+      1119.5,
+      574.4
+     ]
+    },
+    {
+     "label": "motorcycle",
+     "confidence": 0.1683,
+     "box": [
+      279.7,
+      529.3,
+      353.4,
+      649.4
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1681,
+     "box": [
+      105.1,
+      469.9,
+      140.8,
+      595.9
+     ]
+    }
+   ]
+  }
+ }
+}

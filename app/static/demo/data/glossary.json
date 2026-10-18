@@ -1,0 +1,12 @@
+{
+  "IoU": "Intersection over union of two boxes: 1 = identical, 0 = disjoint.",
+  "NMS": "Keep the highest-scoring box, drop boxes overlapping it more than a threshold, repeat.",
+  "Anchor": "A predefined box placed at every grid position; the network predicts corrections to it (about 120,000 for an 800×800 input in RetinaNet).",
+  "FPN": "Merges feature maps of different resolutions so large and small objects are detected well.",
+  "RPN": "Region proposal network: a small network that suggests about a thousand object-like regions for the second stage.",
+  "Focal loss": "A training loss that down-weights easy background anchors. Training only; not run here.",
+  "HOG + SVM": "Histograms of edge directions as hand-made features, plus a linear support vector machine.",
+  "One-stage vs two-stage": "One dense pass with NMS at the end vs propose regions first, then classify and refine each.",
+  "COCO": "Common objects in context: about 118k labelled training photos, 80 classes (ids up to 90, so frameworks use a table with gaps).",
+  "Score meaning": "Deep detectors output a probability-like confidence; HOG's SVM value is rescaled to 0–1 for display and is not a probability."
+}

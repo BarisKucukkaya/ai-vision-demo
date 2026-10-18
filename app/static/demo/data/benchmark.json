@@ -1,0 +1,57 @@
+{
+ "machine": {
+  "os": "Windows-11-10.0.26300-SP0",
+  "python": "3.12.10",
+  "processor": "AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD",
+  "device": {
+   "hog_svm/opencv": "cpu",
+   "faster_rcnn/pytorch": "cpu",
+   "retinanet/pytorch": "cpu",
+   "retinanet/tensorflow": "cpu"
+  }
+ },
+ "image": "IMG_20180622_134600.webp",
+ "runs": 20,
+ "results": {
+  "hog_svm/opencv": {
+   "median": 171.6,
+   "mean": 173.8,
+   "p95": 188.6,
+   "min": 168.3,
+   "max": 189.5,
+   "parameters": null,
+   "model_size_mb": null,
+   "device": "cpu"
+  },
+  "faster_rcnn/pytorch": {
+   "median": 1715.1,
+   "mean": 1713.7,
+   "p95": 1805.9,
+   "min": 1630.0,
+   "max": 1913.9,
+   "parameters": 41755286,
+   "model_size_mb": 167.0,
+   "device": "cpu"
+  },
+  "retinanet/pytorch": {
+   "median": 1646.0,
+   "mean": 1653.3,
+   "p95": 1783.6,
+   "min": 1574.5,
+   "max": 1859.5,
+   "parameters": 34014999,
+   "model_size_mb": 136.1,
+   "device": "cpu"
+  },
+  "retinanet/tensorflow": {
+   "median": 1216.1,
+   "mean": 1225.3,
+   "p95": 1299.1,
+   "min": 1178.8,
+   "max": 1302.6,
+   "parameters": 34121239,
+   "model_size_mb": 136.5,
+   "device": "cpu"
+  }
+ }
+}

@@ -1,0 +1,65 @@
+{
+ "hog_predict": {
+  "id": "hog_predict",
+  "file": "app/adapters/hog_opencv.py",
+  "start_line": 39,
+  "language": "python",
+  "code": "    def _predict(self, image_input: ImageInput, options: Options) -> RawOutput:\n        cv2 = self._cv2\n        rgb = np.asarray(image_input.image)                    # PIL gives RGB\n        bgr = cv2.cvtColor(rgb, cv2.COLOR_RGB2BGR)             # OpenCV expects BGR\n        h, w = bgr.shape[:2]\n        shrink = min(1.0, MAX_SIDE / max(w, h))\n        if shrink < 1.0:\n            bgr = cv2.resize(bgr, (round(w * shrink), round(h * shrink)))\n        s = options.hog_stride\n        rects, weights = self._hog.detectMultiScale(\n            bgr, winStride=(s, s), padding=(8, 8), scale=options.hog_scale, hitThreshold=options.hit_threshold,\n        )\n        scores = np.asarray(weights, dtype=float).reshape(-1)  # empty tuple when nothing is found\n        rects = np.asarray(rects, dtype=float).reshape(-1, 4) / shrink\n        boxes = np.column_stack([rects[:, 0], rects[:, 1], rects[:, 0] + rects[:, 2], rects[:, 1] + rects[:, 3]])\n        scores = np.clip(scores, 0.0, 3.0) / 3.0               # SVM value -> 0..1 display scale\n        labels = [1] * len(scores)                             # the default detector only finds people\n        if options.nms_iou < 1.0 and len(boxes):\n            keep = nms(boxes.tolist(), scores.tolist(), options.nms_iou)\n            boxes, scores, labels = boxes[keep], scores[keep], [labels[i] for i in keep]"
+ },
+ "fasterrcnn_pytorch": {
+  "id": "fasterrcnn_pytorch",
+  "file": "app/adapters/torchvision_detectors.py",
+  "start_line": 103,
+  "language": "python",
+  "code": "        return fasterrcnn_resnet50_fpn(weights=FasterRCNN_ResNet50_FPN_Weights.COCO_V1, box_score_thresh=FLOOR)"
+ },
+ "retinanet_pytorch": {
+  "id": "retinanet_pytorch",
+  "file": "app/adapters/torchvision_detectors.py",
+  "start_line": 56,
+  "language": "python",
+  "code": "    def _predict(self, image_input: ImageInput, options: Options) -> RawOutput:\n        torch = self._torch\n        from torchvision.transforms.functional import pil_to_tensor\n\n        tensor = pil_to_tensor(image_input.image).float() / 255   # CHW, float 0..1, RGB\n        holder = self._nms_holder()\n        previous = holder.nms_thresh\n        holder.nms_thresh = options.nms_iou                       # applied inside the inference lock\n        try:\n            with torch.inference_mode():\n                out = self._model([tensor.to(self.device)])[0]    # a list of tensors in, original pixels out\n        finally:\n            holder.nms_thresh = previous\n        return RawOutput(\n            out[\"boxes\"].cpu().numpy(), out[\"scores\"].cpu().numpy(), out[\"labels\"].cpu().numpy(),\n            {\"nms_iou\": options.nms_iou, \"nms_applied\": True},\n        )\n# ...\n        return retinanet_resnet50_fpn(weights=RetinaNet_ResNet50_FPN_Weights.COCO_V1, score_thresh=FLOOR)"
+ },
+ "nms_reference": {
+  "id": "nms_reference",
+  "file": "app/postprocess.py",
+  "start_line": 31,
+  "language": "python",
+  "code": "def iou(a: Sequence[float], b: Sequence[float]) -> float:\n    \"\"\"Intersection over union of two [x1, y1, x2, y2] boxes.\"\"\"\n    ix = max(0.0, min(a[2], b[2]) - max(a[0], b[0]))\n    iy = max(0.0, min(a[3], b[3]) - max(a[1], b[1]))\n    inter = ix * iy\n    union = (a[2] - a[0]) * (a[3] - a[1]) + (b[2] - b[0]) * (b[3] - b[1]) - inter\n    return inter / union if union > 0 else 0.0\n\n\ndef nms(boxes, scores, iou_threshold, labels=None):\n    \"\"\"Greedy NMS: keep the best box, drop boxes with IoU above the threshold, repeat.\"\"\"\n    order = sorted(range(len(boxes)), key=lambda i: scores[i], reverse=True)\n    keep: list[int] = []\n    for i in order:\n        if all(\n            iou(boxes[i], boxes[j]) <= iou_threshold\n            for j in keep\n            if labels is None or labels[i] == labels[j]\n        ):\n            keep.append(i)\n    return keep"
+ },
+ "postprocess_build": {
+  "id": "postprocess_build",
+  "file": "app/postprocess.py",
+  "start_line": 10,
+  "language": "python",
+  "code": "def build_detections(boxes, scores, labels, names, threshold, width, height, max_detections=100):\n    \"\"\"Threshold, clip, name and sort raw model output (boxes are xyxy in original pixels).\"\"\"\n    out: list[Detection] = []\n    for box, score, label in zip(boxes, scores, labels):\n        score = float(score)\n        if score < threshold:\n            continue\n        x1 = min(max(float(box[0]), 0.0), width)\n        y1 = min(max(float(box[1]), 0.0), height)\n        x2 = min(max(float(box[2]), 0.0), width)\n        y2 = min(max(float(box[3]), 0.0), height)\n        if x2 - x1 < 1 or y2 - y1 < 1:\n            continue  # thinner than one pixel after clipping\n        name = names.get(int(label), f\"class_{int(label)}\")\n        out.append(Detection(name, round(score, 4), [round(x1, 1), round(y1, 1), round(x2, 1), round(y2, 1)]))\n    out.sort(key=lambda d: d.confidence, reverse=True)\n    return out[:max_detections]"
+ },
+ "backend_contract": {
+  "id": "backend_contract",
+  "file": "app/adapters/base.py",
+  "start_line": 22,
+  "language": "python",
+  "code": "class Adapter:\n    algorithm = \"\"\n    framework = \"\"\n    model_name = \"\"\n    score_meaning = \"probability-like\"\n    classes_supported = len(COCO_CATEGORIES)\n    retry_after_error = 30.0  # seconds before a failed load is tried again\n\n    def __init__(self) -> None:\n        self.parameters: int | None = None\n        self.model_size_mb: float | None = None\n        self.device = \"cpu\"\n        self.mock = False\n        self._loaded = False\n        self._error: str | None = None\n        self._error_time = 0.0\n        self._load_lock = threading.Lock()\n        self._infer_lock = threading.Lock()  # one inference at a time\n\n    def _load(self) -> None:\n        raise NotImplementedError\n\n    def _predict(self, image_input: ImageInput, options: Options) -> RawOutput:\n        raise NotImplementedError\n\n    def ensure_loaded(self) -> None:\n        if self._loaded:\n            return\n        with self._load_lock:  # lazy, thread-safe, loads once\n            if self._loaded:\n                return\n            if self._error and time.time() - self._error_time < self.retry_after_error:\n                raise BackendUnavailable(self._error)\n            try:\n                self._load()\n            except BackendUnavailable as exc:\n                self._error, self._error_time = str(exc), time.time()\n                raise\n            except Exception as exc:  # weights unreachable, bad install, ...\n                self._error, self._error_time = f\"{type(exc).__name__}: {exc}\", time.time()\n                raise BackendUnavailable(self._error) from exc\n            self._error = None\n            self._loaded = True\n\n    def predict(self, image_input: ImageInput, threshold: float, options: Options | None = None) -> Prediction:\n        options = options or Options()\n        self.ensure_loaded()\n        with self._infer_lock:\n            start = time.perf_counter()\n            try:\n                raw = self._predict(image_input, options)\n            except (BackendUnavailable, BackendError):\n                raise\n            except Exception as exc:\n                raise BackendError(f\"{type(exc).__name__}: {exc}\") from exc\n            inference_ms = (time.perf_counter() - start) * 1000.0"
+ },
+ "retinanet_tensorflow": {
+  "id": "retinanet_tensorflow",
+  "file": "app/adapters/keras_retinanet.py",
+  "start_line": 19,
+  "language": "python",
+  "code": "def letterbox(image: Image.Image, target_w: int, target_h: int):\n    \"\"\"Resize keeping the aspect ratio and centre on a black canvas. Returns (canvas, scale, ox, oy).\"\"\"\n    w, h = image.size\n    scale = min(target_w / w, target_h / h)\n    nw, nh = round(w * scale), round(h * scale)\n    canvas = np.zeros((target_h, target_w, 3), dtype=np.uint8)\n    ox, oy = int((target_w - nw) / 2), int((target_h - nh) / 2)\n    canvas[oy:oy + nh, ox:ox + nw] = np.asarray(image.resize((nw, nh), Image.BILINEAR))\n    return canvas, scale, ox, oy\n\n\ndef to_original(boxes_xyxy, scale, ox, oy):\n    \"\"\"Inverse of letterbox for boxes given as xyxy in model-input pixels.\"\"\"\n    boxes = np.asarray(boxes_xyxy, dtype=float).reshape(-1, 4).copy()\n    boxes[:, [0, 2]] = (boxes[:, [0, 2]] - ox) / scale\n    boxes[:, [1, 3]] = (boxes[:, [1, 3]] - oy) / scale\n    return boxes\n# ...\n        model.prediction_decoder.confidence_threshold = FLOOR   # the UI slider filters afterwards\n# ...\n    def _run(self, canvas):\n        \"\"\"Model call on a letterboxed HWC 0-255 canvas. Returns xyxy boxes (model pixels), scores, labels.\"\"\"\n        th, tw = canvas.shape[:2]\n        out = self._model.predict(canvas[None].astype(\"float32\"), verbose=0)\n        n = int(out[\"num_detections\"][0])\n        boxes = np.asarray(out[\"boxes\"][0][:n])\n        boxes = self._keras.utils.bounding_boxes.convert_format(\n            boxes, source=self.bounding_box_format, target=\"xyxy\", height=th, width=tw,\n        )\n        return np.asarray(boxes).reshape(-1, 4), np.asarray(out[\"confidence\"][0][:n]), np.asarray(out[\"labels\"][0][:n])"
+ },
+ "train_pytorch": {
+  "id": "train_pytorch",
+  "file": "scripts/train_cnn_pytorch.py",
+  "start_line": 31,
+  "language": "python",
+  "code": "    for epoch in range(3):\n        for i in range(0, len(x), 64):\n            xb, yb = x[i:i + 64], y[i:i + 64]\n            optimizer.zero_grad()           # 1. clear old gradients\n            loss = loss_fn(model(xb), yb)   # 2. forward pass + loss\n            loss.backward()                 # 3. backpropagation\n            optimizer.step()                # 4. update the weights\n        accuracy = (model(x).argmax(1) == y).float().mean().item()\n        print(f\"epoch {epoch + 1}: loss {loss.item():.4f}  accuracy {accuracy:.3f}\")"
+ },
+ "train_keras": {
+  "id": "train_keras",
+  "file": "scripts/train_cnn_keras.py",
+  "start_line": 29,
+  "language": "python",
+  "code": "    model.compile(\n        optimizer=\"adam\",\n        loss=keras.losses.SparseCategoricalCrossentropy(from_logits=True),\n        metrics=[\"accuracy\"],\n    )\n    model.fit(x, y, batch_size=64, epochs=3, verbose=2)"
+ }
+}

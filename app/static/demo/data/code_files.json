@@ -1,0 +1,38 @@
+{
+ "shared": [
+  {
+   "file": "app/adapters/base.py",
+   "lines": 105
+  },
+  {
+   "file": "app/postprocess.py",
+   "lines": 44
+  },
+  {
+   "file": "app/schemas.py",
+   "lines": 86
+  },
+  {
+   "file": "app/registry.py",
+   "lines": 43
+  },
+  {
+   "file": "app/main.py",
+   "lines": 166
+  }
+ ],
+ "framework": [
+  {
+   "file": "app/adapters/hog_opencv.py",
+   "lines": 56
+  },
+  {
+   "file": "app/adapters/torchvision_detectors.py",
+   "lines": 86
+  },
+  {
+   "file": "app/adapters/keras_retinanet.py",
+   "lines": 123
+  }
+ ]
+}

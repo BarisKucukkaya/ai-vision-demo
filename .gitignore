@@ -1,0 +1,16 @@
+venv*/
+.venv/
+__pycache__/
+*.pyc
+samples/*.jpg
+samples/*.jpeg
+samples/*.webp
+samples/*.bmp
+samples/*.gif
+samples/*.png
+.pytest_cache/
+# weights caches
+.torch/
+.keras/
+.cache/
+tests/ui/screenshots/

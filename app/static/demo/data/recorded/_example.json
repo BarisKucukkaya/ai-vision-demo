@@ -1,0 +1,296 @@
+{
+ "image": {
+  "name": "_example",
+  "width": 1000,
+  "height": 700
+ },
+ "recorded_at": "2026-10-18T15:34:49",
+ "machine": "mock adapters (no real inference)",
+ "results": {
+  "hog_svm/opencv": {
+   "model": "mock-hog_svm-opencv",
+   "inference_ms": 10.3,
+   "device": "cpu",
+   "mock": true,
+   "score_meaning": "rescaled SVM score",
+   "settings": {
+    "nms_iou": 0.5,
+    "nms_applied": true,
+    "hog_stride": 8,
+    "hog_scale": 1.05,
+    "hit_threshold": 0.0
+   },
+   "model_info": {
+    "parameters": null,
+    "model_size_mb": null,
+    "classes_supported": 1
+   },
+   "detections": [
+    {
+     "label": "person",
+     "confidence": 0.91,
+     "box": [
+      100.0,
+      210.0,
+      220.0,
+      595.0
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.58,
+     "box": [
+      550.0,
+      245.0,
+      650.0,
+      616.0
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.1,
+     "box": [
+      770.0,
+      84.0,
+      810.0,
+      168.0
+     ]
+    }
+   ]
+  },
+  "faster_rcnn/pytorch": {
+   "model": "mock-faster_rcnn-pytorch",
+   "inference_ms": 10.3,
+   "device": "cpu",
+   "mock": true,
+   "score_meaning": "probability-like",
+   "settings": {
+    "nms_iou": 0.5,
+    "nms_applied": true
+   },
+   "model_info": {
+    "parameters": 41755286,
+    "model_size_mb": 167.0,
+    "classes_supported": 80
+   },
+   "detections": [
+    {
+     "label": "person",
+     "confidence": 0.94,
+     "box": [
+      100.0,
+      210.0,
+      220.0,
+      595.0
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.9,
+     "box": [
+      300.0,
+      385.0,
+      520.0,
+      560.0
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.81,
+     "box": [
+      550.0,
+      245.0,
+      650.0,
+      616.0
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.72,
+     "box": [
+      600.0,
+      434.0,
+      920.0,
+      630.0
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.28,
+     "box": [
+      750.0,
+      70.0,
+      800.0,
+      154.0
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.12,
+     "box": [
+      20.0,
+      35.0,
+      50.0,
+      70.0
+     ]
+    }
+   ]
+  },
+  "retinanet/pytorch": {
+   "model": "mock-retinanet-pytorch",
+   "inference_ms": 10.5,
+   "device": "cpu",
+   "mock": true,
+   "score_meaning": "probability-like",
+   "settings": {
+    "nms_iou": 0.5,
+    "nms_applied": true
+   },
+   "model_info": {
+    "parameters": 34014999,
+    "model_size_mb": 136.1,
+    "classes_supported": 80
+   },
+   "detections": [
+    {
+     "label": "person",
+     "confidence": 0.94,
+     "box": [
+      100.0,
+      210.0,
+      220.0,
+      595.0
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.9,
+     "box": [
+      300.0,
+      385.0,
+      520.0,
+      560.0
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.81,
+     "box": [
+      550.0,
+      245.0,
+      650.0,
+      616.0
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.72,
+     "box": [
+      600.0,
+      434.0,
+      920.0,
+      630.0
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.28,
+     "box": [
+      750.0,
+      70.0,
+      800.0,
+      154.0
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.12,
+     "box": [
+      20.0,
+      35.0,
+      50.0,
+      70.0
+     ]
+    }
+   ]
+  },
+  "retinanet/tensorflow": {
+   "model": "mock-retinanet-tensorflow",
+   "inference_ms": 10.3,
+   "device": "cpu",
+   "mock": true,
+   "score_meaning": "probability-like",
+   "settings": {
+    "nms_iou": 0.5,
+    "nms_applied": true
+   },
+   "model_info": {
+    "parameters": 34014999,
+    "model_size_mb": 136.1,
+    "classes_supported": 80
+   },
+   "detections": [
+    {
+     "label": "person",
+     "confidence": 0.94,
+     "box": [
+      100.0,
+      210.0,
+      220.0,
+      595.0
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.9,
+     "box": [
+      300.0,
+      385.0,
+      520.0,
+      560.0
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.81,
+     "box": [
+      550.0,
+      245.0,
+      650.0,
+      616.0
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.72,
+     "box": [
+      600.0,
+      434.0,
+      920.0,
+      630.0
+     ]
+    },
+    {
+     "label": "person",
+     "confidence": 0.28,
+     "box": [
+      750.0,
+      70.0,
+      800.0,
+      154.0
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.12,
+     "box": [
+      20.0,
+      35.0,
+      50.0,
+      70.0
+     ]
+    }
+   ]
+  }
+ }
+}

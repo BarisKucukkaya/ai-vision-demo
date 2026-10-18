@@ -1,0 +1,22 @@
+{
+  "callouts": [
+    {
+      "title": "Input layout",
+      "left": "retinanet_pytorch:pil_to_tensor",
+      "right": "retinanet_tensorflow:canvas[None]",
+      "text": "PyTorch: a list of CHW float tensors, 0 to 1. Keras: one HWC batch, 0 to 255."
+    },
+    {
+      "title": "Resizing",
+      "left": "retinanet_pytorch:self._model([",
+      "right": "retinanet_tensorflow:scale = min",
+      "text": "torchvision resizes inside the model. With KerasHub we letterbox ourselves, because its converter crops."
+    },
+    {
+      "title": "Box format and coordinate space",
+      "left": "retinanet_pytorch:out[\"boxes\"]",
+      "right": "retinanet_tensorflow:convert_format",
+      "text": "torchvision returns xyxy in original pixels. KerasHub returns yxyx in model-input pixels, so we convert and map back."
+    }
+  ]
+}

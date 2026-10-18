@@ -1,0 +1,35 @@
+{
+  "order": ["hog_svm", "faster_rcnn", "retinanet"],
+  "algorithms": {
+    "hog_svm": {
+      "id": "hog_svm",
+      "name": "HOG + SVM",
+      "family": "Classic machine learning",
+      "features": "Hand-crafted edge directions",
+      "how_it_searches": "Sliding window, many sizes",
+      "classes": "One (person)",
+      "key_training_idea": "SVM margin (hinge loss)",
+      "score_meaning": "rescaled SVM score, not a probability"
+    },
+    "faster_rcnn": {
+      "id": "faster_rcnn",
+      "name": "Faster R-CNN",
+      "family": "Deep learning, two-stage",
+      "features": "Learned: ResNet-50 + FPN",
+      "how_it_searches": "Proposals (RPN) → classify",
+      "classes": "80 COCO classes",
+      "key_training_idea": "RPN + RoI heads",
+      "score_meaning": "probability-like"
+    },
+    "retinanet": {
+      "id": "retinanet",
+      "name": "RetinaNet",
+      "family": "Deep learning, one-stage",
+      "features": "Learned: ResNet-50 + FPN",
+      "how_it_searches": "Dense anchors, one pass",
+      "classes": "80 COCO classes",
+      "key_training_idea": "Focal loss",
+      "score_meaning": "probability-like"
+    }
+  }
+}
